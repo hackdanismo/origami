@@ -23,8 +23,14 @@
     <main role="main">
         <section>
             <div class="container">
-                <!-- Main content of the page -->
-                
+                <!-- Component: Toast -->
+                <div class="paper-toast"></div>
+                <button onclick="showToast()">Show Toast</button>
+                <!-- END: Component: Toast -->
+            </div>
+        </section>
+        <section>
+            <div class="container">
                 <!-- Component: Toggle Switch -->
                 <label class="paper-switch">
                     <input type="checkbox">
@@ -37,5 +43,17 @@
     <footer role="contentinfo">
         <!-- Footer content of the page -->
     </footer>
+
+<script>
+function showToast() {
+    const toast = document.querySelector(".paper-toast");
+    toast.textContent = "Hello World";
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);   // Hide after 3 seconds
+}
+</script>
 </body>
 </html>
