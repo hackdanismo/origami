@@ -3,10 +3,18 @@
     --black: #000;
     --white: #fff;
 
+    --charcoal: #333;
+
     --grey: #ccc;
 
     /*** Container ***/
     --container-max-width: 1240px;
+
+    /*** Toast ***/
+    --toast-background-color: var(--charcoal);
+    --toast-color: var(--white);
+    --toast-border-radius: 8px;
+ 
     /*** Toggle Switch ***/
     --toggle-switcher-size: 22px;
     /* The space between knob and edge */
@@ -83,10 +91,10 @@ input:checked + .paper-slider::before {
     bottom: 30px;
     right: 30px;
     min-width: 200px;
-    padding: 12px 16px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    background-color: var(--toast-background-color);
+    color: var(--toast-color);
+    border-radius: var(--toast-border-radius);
     text-align: center;
     opacity: 0;
     visibility: hidden;
