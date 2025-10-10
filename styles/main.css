@@ -76,3 +76,25 @@ input:checked + .paper-slider::before {
     transform: translateX(var(--toggle-switcher-size));
 }
 /*** END: Toggle Switch ***/
+
+/*** Toast ***/
+.paper-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    min-width: 200px;
+    padding: 12px 16px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.paper-toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+/*** END: Toggle Switch ***/
