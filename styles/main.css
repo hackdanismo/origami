@@ -1,5 +1,22 @@
 :root {
+    /*** Color ***/
+    --black: #000;
+    --white: #fff;
+
+    --grey: #ccc;
+
+    /*** Container ***/
     --container-max-width: 1240px;
+    /*** Toggle Switch ***/
+    --toggle-switcher-size: 22px;
+    /* The space between knob and edge */
+    --toggle-switcher-padding: 4px;
+    /* The color of the toggle switch */
+    --toggle-switcher-color: var(--white);
+    /* The background color of the toggle switch */
+    --toggle-switcher-background: var(--grey);
+    /* The background color when active of the toggle switcher */
+    --toggle-switcher-background-active: var(--black);
 }
 
 .container {
@@ -12,3 +29,50 @@
     /* Horizontal padding to provide spacing on smaller screen sizes */
     padding: 0 1rem;
 }
+
+/*** Toggle Switch ***/
+.paper-switch {
+    position: relative;
+    display: inline-block;
+    width: calc(var(--toggle-switcher-size) * 2 + var(--toggle-switcher-padding) * 2);
+    height: calc(var(--toggle-switcher-size) + var(--toggle-switcher-padding) * 2);
+}
+
+/* Hide the default checkbox element */
+.paper-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.paper-slider {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    background-color: var(--toggle-switcher-background);
+    transition: 0.4s;
+    border-radius: 9999px;
+    /* Prevents any tiny overflow artifacts */
+    overflow: hidden; 
+}
+
+.paper-slider::before {
+    content: "";
+    position: absolute;
+    width: var(--toggle-switcher-size);
+    height: var(--toggle-switcher-size);
+    left: var(--toggle-switcher-padding);
+    bottom: var(--toggle-switcher-padding);
+    background: var(--toggle-switcher-color);
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .paper-slider { 
+    background: var(--toggle-switcher-background-active); 
+}
+
+input:checked + .paper-slider::before {
+    transform: translateX(var(--toggle-switcher-size));
+}
+/*** END: Toggle Switch ***/
