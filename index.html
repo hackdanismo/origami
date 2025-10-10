@@ -24,7 +24,9 @@
         <section>
             <div class="container">
                 <!-- Component: Toast -->
-                <div class="paper-toast"></div>
+                <div class="paper-toast js-paper-toast">
+                    <strong>Success!</strong> Your file has been uploaded 🎉
+                </div>
                 <button onclick="showToast()">Show Toast</button>
                 <!-- END: Component: Toast -->
             </div>
@@ -45,14 +47,18 @@
     </footer>
 
 <script>
-function showToast() {
-    const toast = document.querySelector(".paper-toast");
-    toast.textContent = "Hello World";
-    toast.classList.add("show");
+const showToast = () => {
+    const toast = document.querySelector(".js-paper-toast");
+    // Only show the toast component if it's not already visible
+    if (!toast.classList.contains("show")) {
+        // Add CSS class to display the toast component
+        toast.classList.add("show");
 
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 3000);   // Hide after 3 seconds
+        // Hide the toast component after 3 seconds
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3000);
+    }
 }
 </script>
 </body>
