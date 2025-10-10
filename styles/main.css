@@ -105,4 +105,4 @@ input:checked + .paper-slider::before {
     visibility: visible;
     opacity: 1;
 }
-/*** END: Toggle Switch ***/
+/*** END: Toast ***/
