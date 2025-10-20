@@ -352,3 +352,31 @@ input:checked + .paper-slider::before {
   }
 }
 /*** END: Card ***/
+
+/*** Scroll Link ***/
+  .link-grow {
+    position: relative;
+    display: inline-block;
+    color: #0d6efd;
+    text-decoration: none;
+    padding-bottom: 2px; /* space for underline */
+  }
+
+  /* Hidden underline by default */
+  .link-grow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0%;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  /* Grow underline on hover or focus */
+  .link-grow:hover::after,
+  .link-grow:focus-visible::after {
+    width: 100%;
+  }
+  /*** END: Scroll Link ***/
