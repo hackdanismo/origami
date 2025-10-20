@@ -106,3 +106,39 @@ input:checked + .paper-slider::before {
     opacity: 1;
 }
 /*** END: Toast ***/
+
+/*** Card ***/
+.paper-card-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    /* Forces cards to be equal height per row */
+    align-items: stretch;
+}
+
+.paper-card {
+    background: #f5f7fa;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 1rem;
+    /* Optional: allows you to align content inside */
+    display: flex;
+    /* Keeps the card content stacked */        
+    flex-direction: column;   
+    /* Optional: spread content evenly */ 
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Default: stacked on mobile/tablet */
+.paper-card-grid--stack {
+  grid-template-columns: 1fr;
+}
+
+/* Modifier: switch to multiple columns on larger screens */
+@media (min-width: 768px) {
+  .paper-card-grid--stack {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+/*** END: Card ***/
